@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "author": "Nikitha Sambangi",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": -85.8, "left": 18.6, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": -126.1, "left": -278.6, "attrs": {} },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": 246.4,
+      "left": 188,
+      "attrs": { "pins": "i2c" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": -208.8,
+      "left": -17.4,
+      "attrs": { "volume": "0.1" }
+    }
+  ],
+  "connections": [
+    [ "pot1:GND", "uno:GND.2", "black", [ "v182.4", "h441.6" ] ],
+    [ "pot1:VCC", "uno:5V", "red", [ "v211.2", "h402.4" ] ],
+    [ "lcd1:GND", "uno:GND.2", "black", [ "h0" ] ],
+    [ "lcd1:VCC", "uno:5V", "red", [ "h0" ] ],
+    [ "lcd1:SDA", "uno:A4", "green", [ "h-48", "v-115", "h115.2" ] ],
+    [ "lcd1:SCL", "uno:A5", "green", [ "h-67.2", "v-143.7", "h153.6" ] ],
+    [ "bz1:2", "uno:8", "green", [ "v0", "h162.8" ] ],
+    [ "bz1:1", "uno:GND.3", "green", [ "v0", "h-96", "v336", "h297.6" ] ],
+    [ "uno:A1", "uno:A0", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
