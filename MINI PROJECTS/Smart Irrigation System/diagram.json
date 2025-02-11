@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "author": "Manasa Samanuri",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0.6, "left": 85.8, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": -126.1, "left": -173, "attrs": {} },
+    { "type": "wokwi-dht22", "id": "dht1", "top": 278.7, "left": -178.2, "attrs": {} },
+    { "type": "wokwi-relay-module", "id": "relay1", "top": -182.2, "left": 105.6, "attrs": {} },
+    { "type": "wokwi-led", "id": "led1", "top": -186, "left": 301.4, "attrs": { "color": "red" } },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": -74.4,
+      "left": 481.8,
+      "attrs": { "volume": "0.1" }
+    }
+  ],
+  "connections": [
+    [ "pot1:VCC", "uno:5V", "blue", [ "v278.4", "h373.6" ] ],
+    [ "pot1:SIG", "uno:A0", "blue", [ "v297.6", "h431.6" ] ],
+    [ "pot1:GND", "uno:GND.2", "blue", [ "v316.8", "h412.8" ] ],
+    [ "dht1:VCC", "uno:5V", "purple", [ "v28.8", "h403.2" ] ],
+    [ "dht1:GND", "uno:GND.3", "purple", [ "v9.6", "h403.2" ] ],
+    [ "dht1:SDA", "uno:2", "purple", [ "v0", "h-86.3", "v-441.6", "h566.4" ] ],
+    [ "relay1:VCC", "uno:5V", "red", [ "h-393.6", "v662.4", "h528" ] ],
+    [ "relay1:GND", "uno:GND.3", "red", [ "h-422.4", "v671.6", "h595.2" ] ],
+    [ "relay1:IN", "uno:3", "red", [ "h0", "v86.2", "h192" ] ],
+    [ "relay1:NO", "led1:C", "red", [ "h0" ] ],
+    [ "led1:A", "uno:GND.3", "red", [ "v0", "h288", "v470.4", "h-345.6" ] ],
+    [ "bz1:2", "uno:4", "green", [ "v9.6", "h47.6", "v-124.8", "h-249.6" ] ],
+    [ "bz1:1", "uno:GND.2", "green", [ "v268.8", "h-240" ] ]
+  ],
+  "dependencies": {}
+}
